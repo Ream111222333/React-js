@@ -1,0 +1,176 @@
+/* ===== Footer Base ===== */
+.footer {
+  background: linear-gradient(180deg, #0d0d0d, #121212);
+  color: #cfd8dc;
+  padding: 80px 20px 30px;
+  font-size: 0.95rem;
+}
+
+/* ===== Layout ===== */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 50px;
+}
+
+/* ===== Brand / About ===== */
+.footer-brand h3 {
+  font-size: 1.7rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.footer-brand h3 span {
+  color: #00e5ff;
+}
+
+.footer-brand p {
+  margin-top: 14px;
+  line-height: 1.7;
+  color: #b0bec5;
+}
+
+.footer-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* ===== Section Titles ===== */
+.footer-links h4,
+.footer-social h4,
+.footer-skills h4 {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer-links h4::after,
+.footer-social h4::after,
+.footer-skills h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 40px;
+  height: 2px;
+  background: #00e5ff;
+}
+
+/* ===== Links ===== */
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #cfd8dc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00e5ff;
+  transform: translateX(6px);
+}
+
+/* ===== Skills ===== */
+.footer-skills span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #cfd8dc;
+}
+
+.footer-skills svg {
+  color: #00e5ff;
+}
+
+.availability {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #00e5ff;
+}
+
+/* ===== Social Icons ===== */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #00e5ff;
+  color: #00363a;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.45);
+}
+
+/* ===== Bottom Bar ===== */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #9ea7ad;
+}
+
+/* ===== Back To Top Button ===== */
+.back-to-top{
+    background-color: #248e95;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+
+
+
+}
+.back-to-top:hover {
+    background-color: #48d6e2;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(72, 214, 226, 0.45);
+    
+
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 20px 25px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    justify-content: center;
+  }
+}

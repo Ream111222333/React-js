@@ -1,0 +1,137 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+  padding: 0 10%;
+  background: #0d1117; /* fallback color */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/R1.png') no-repeat center center/cover;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #00e5ff;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Skills in Hero */
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.hero-skills span {
+  background: rgba(0, 229, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #00e5ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-skills span:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: #00e5ff;
+  color: #0d1117;
+}
+
+.btn.primary:hover {
+  background: #00bcd4;
+}
+
+.btn.outline {
+  border: 2px solid #00e5ff;
+  color: #00e5ff;
+}
+
+.btn.outline:hover {
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.btn.ghost {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
