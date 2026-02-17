@@ -52,12 +52,12 @@ function Contact() {
           <div className="info-card" onClick={() => copyToClipboard("ream@example.com")}>
             <FaEnvelope className="info-icon" />
             <h4>Email</h4>
-            <p>ream@example.com</p>
+            <p>reamkhorn12345@gmail.com</p>
           </div>
           <div className="info-card" onClick={() => copyToClipboard("+855 123 456 789")}>
             <FaPhone className="info-icon" />
             <h4>Phone</h4>
-            <p>+855 123 456 789</p>
+            <p>+855 863 393 350</p>
           </div>
           <div className="info-card">
             <FaLinkedin className="info-icon" />
@@ -72,8 +72,8 @@ function Contact() {
             <FaGithub className="info-icon" />
             <h4>GitHub</h4>
             <p>
-              <a href="https://github.com/ream" target="_blank" rel="noreferrer">
-                github.com/ream
+              <a href="https://github.com/Ream111222333" target="_blank" rel="noreferrer">
+                github.com
               </a>
             </p>
           </div>

@@ -64,7 +64,7 @@ function About() {
 
             <div className="education-card">
               <h4>Passerelles Numériques Cambodia (PNC)</h4>
-              <span className="edu-year">2022 - Present</span>
+              <span className="edu-year">2026 - Present</span>
 
               <p>
                 Currently pursuing professional IT training specializing in 
