@@ -98,18 +98,58 @@
 
 .image-wrapper {
   position: relative;
-  width: 320px;
-  height: 380px;
-  border-radius: 20px;
+  width: 340px;
+  height: 400px;
+  border-radius: 24px;
   overflow: hidden;
   animation: float 4s ease-in-out infinite;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(96, 165, 250, 0.3);
+  background: linear-gradient(140deg, rgba(51, 107, 255, .2), rgba(26, 96, 156, .25));
+  backdrop-filter: blur(6px);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.7);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.image-wrapper::after {
+  content: "Professional Portrait";
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  color: #eaf4ff;
+  background: rgba(10, 25, 45, 0.62);
+  border-radius: 6px;
+  font-weight: 600;
+  backdrop-filter: blur(3px);
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at top right, rgba(102, 178, 255, 0.22), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(26, 83, 180, 0.17), transparent 45%);
 }
 
 .image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .5s ease, filter .35s ease;
+  filter: saturate(1.1) contrast(1.07) brightness(1.02);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.15) contrast(1.12) brightness(1.05);
 }
 
 /* Floating animation */
@@ -133,4 +173,32 @@
   .hero-buttons {
     justify-content: center;
   }
+}
+
+/* Light mode overrides */
+body.light-mode .hero {
+  background: linear-gradient(135deg, #f5f9ff, #e8f1ff);
+  color: #0e1726;
+}
+
+body.light-mode .hero-left h2 {
+  color: #475569;
+}
+
+body.light-mode .hero-left p {
+  color: #1f2937;
+}
+
+body.light-mode .primary {
+  background: linear-gradient(90deg, #0b8bff, #3cc6ff);
+}
+
+body.light-mode .outline {
+  border-color: #0b8bff;
+  color: #0b8bff;
+}
+
+body.light-mode .outline:hover {
+  background: #0b8bff;
+  color: white;
 }

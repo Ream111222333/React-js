@@ -151,3 +151,35 @@
     justify-content: center;
   }
 }
+
+/* Light mode overrides */
+body.light-mode .about-section {
+  background: #f6f8fb;
+  color: #0e1726;
+}
+
+body.light-mode .section-tag,
+body.light-mode .stat h3,
+body.light-mode .education h3,
+body.light-mode .education-card h4 {
+  color: #0b8bff;
+}
+
+body.light-mode .about-description,
+body.light-mode .stat p,
+body.light-mode .edu-year,
+body.light-mode .education-card p {
+  color: #334155;
+}
+
+body.light-mode .education-card,
+body.light-mode .skill-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(11, 139, 255, 0.12);
+  box-shadow: 0 14px 40px rgba(11, 139, 255, 0.08);
+}
+
+body.light-mode .education-card:hover,
+body.light-mode .skill-card:hover {
+  background: #ffffff;
+}

@@ -1,3 +1,27 @@
+:root {
+  --bg-color: #0f1115;
+  --text-color: #f5f7fb;
+  --nav-bg: rgba(18, 18, 18, 0.9);
+  --nav-border: rgba(255, 255, 255, 0.08);
+  --nav-link: #e8eaeb;
+  --nav-link-muted: #b8c2cc;
+  --accent: #00e5ff;
+  --pill-gradient: linear-gradient(135deg, #2dc3d3, #588187);
+  --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.light-mode {
+  --bg-color: #f6f8fb;
+  --text-color: #0e1726;
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-border: rgba(15, 23, 42, 0.06);
+  --nav-link: #0e1726;
+  --nav-link-muted: #334155;
+  --accent: #0b8bff;
+  --pill-gradient: linear-gradient(135deg, #4cc2ff, #6dd5ed);
+  --shadow-strong: 0 12px 30px rgba(0, 119, 255, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,10 +37,11 @@ html, body {
 }
 
 body {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* React root */
