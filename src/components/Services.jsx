@@ -1,13 +1,10 @@
 
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FaCode, FaServer, FaRocket, FaPalette, FaMobileAlt, FaChartLine } from "react-icons/fa";
 import "../css/Services.css";
 
 function Services() {
-  const [activeService, setActiveService] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
     const serviceItems = document.querySelectorAll(".service-item");
 
@@ -24,16 +21,7 @@ function Services() {
 
     serviceItems.forEach((item) => observer.observe(item));
 
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+    return () => observer.disconnect();
   }, []);
 
   const services = [
@@ -42,7 +30,7 @@ function Services() {
       icon: <FaCode />,
       title: "Frontend Development",
       description: "Creating stunning, responsive user interfaces with modern React applications and pixel-perfect designs.",
-      features: ["React.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      features: ["React.js", "TypeScript", "Responsive Design"],
       color: "#61dafb",
       level: 90,
       projects: "15+ Projects"
@@ -52,7 +40,7 @@ function Services() {
       icon: <FaServer />,
       title: "Backend Development",
       description: "Building robust server-side applications with scalable APIs and secure database architectures.",
-      features: ["Node.js", "Express", "MongoDB", "REST APIs"],
+      features: ["Node.js", "React.js", "MongoDB", "REST APIs"],
       color: "#68a063",
       level: 85,
       projects: "10+ Projects"
@@ -120,12 +108,10 @@ function Services() {
         {/* Services Grid */}
         <div className="services-grid">
           {services.map((service, index) => (
-            <div 
-              key={service.id} 
-              className={`service-item ${activeService === service.id ? 'active' : ''}`}
+            <div
+              key={service.id}
+              className="service-item"
               style={{ '--service-color': service.color, '--delay': `${index * 0.1}s` }}
-              onMouseEnter={() => setActiveService(service.id)}
-              onMouseLeave={() => setActiveService(null)}
             >
               <div className="service-glow"></div>
               <div className="service-background"></div>
@@ -166,34 +152,6 @@ function Services() {
                       {feature}
                     </span>
                   ))}
-                </div>
-              </div>
-
-              {/* Service Overlay */}
-              <div className="service-overlay">
-                <div className="overlay-content">
-                  <h4>{service.title}</h4>
-                  <p>Expert in {service.title.toLowerCase()} with modern technologies and best practices.</p>
-                  <div className="overlay-features">
-                    <h5>Key Technologies:</h5>
-                    <div className="overlay-tech-stack">
-                      {service.features.map((feature, idx) => (
-                        <span key={idx} className="tech-badge">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="overlay-stats">
-                    <div className="stat-box">
-                      <span className="stat-number">{service.level}%</span>
-                      <span className="stat-label">Expertise</span>
-                    </div>
-                    <div className="stat-box">
-                      <span className="stat-number">{service.projects}</span>
-                      <span className="stat-label">Completed</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 

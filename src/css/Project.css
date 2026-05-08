@@ -185,6 +185,64 @@
   }
 }
 
+@media (max-width: 480px) {
+  .projects {
+    padding: 80px 14px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+
+  .timeline-item {
+    padding-left: 45px;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    left: 8px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline::after {
+    left: 14px;
+  }
+
+  .timeline-content {
+    padding: 20px 16px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .project-date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .tech-stack span {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    margin: 4px 4px 0 0;
+  }
+
+  .project-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 14px;
+    margin: 0 0 8px 0;
+    font-size: 0.8rem;
+  }
+}
+
 /* Light mode overrides */
 body.light-mode .projects {
   background: linear-gradient(135deg, #eef4ff, #dfeaf8);

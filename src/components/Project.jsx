@@ -29,24 +29,32 @@ function Projects() {
       year: "2025",
       desc: "Full-stack patient system with authentication, CRUD, and appointment scheduling.",
       tech: ["React", "PHP", "MySQL", "REST API"],
+      repository: "https://github.com/reamkhorn12345-art/potiofilo-ream-html.git",
+      liveDemo: "https://my-portfolios-html.vercel.app",
+    },
+    {
+      title: "weather app",
+      year: "2025",
+      desc: "A simple weather application that displays current conditions and forecasts.",
+      tech: ["javascript", "OpenWeather API", "CSS", "HTML", "GitHub", "postman"],
+      repository: "https://github.com/Ream111222333/Weather-group2.git",
+      liveDemo: "https://weather-system-group2.vercel.app/",
     },
     {
       title: "Achar Booking System",
-      year: "2025",
+      year: "2026",
       desc: "Booking platform with user authentication and admin dashboard management.",
-      tech: ["React", "Node.js", "Database"],
+      tech: ["Vue .js", "laravel", "Mysql", "Redis", "REST API", "Jira", "GitHub", "github", "postman"],
+      repository: "https://github.com/Jame2026/Achar-Event-Booking.git",
+      liveDemo: "https://achar-event-booking-232f.vercel.app/",
     },
     {
-      title: "Achar Booking System",
+      title: "E-commerse Platform",
       year: "2025",
-      desc: "Booking platform with user authentication and admin dashboard management.",
-      tech: ["Vue .js", "Node.js", "Mysql","Redis"],
-    },
-    {
-      title: "Achar Booking System",
-      year: "2025",
-      desc: "Booking platform with user authentication and admin dashboard management.",
-      tech: ["Pythoon", "Javacript", "Database"],
+      desc: "E-commerce platform with product management, shopping cart, and checkout functionality.",
+      tech: ["React", "Node.js", "MongoDB", "Stripe API"],
+      repository: "https://github.com/Ream111222333/v0-e-commerce-website-build.git",
+      liveDemo: "https://e-commersream.vercel.app",
     },
   ];
 
@@ -59,9 +67,8 @@ function Projects() {
           <div
             key={index}
             ref={(el) => (itemsRef.current[index] = el)}
-            className={`timeline-item hidden ${
-              index % 2 === 0 ? "left" : "right"
-            }`}
+            className={`timeline-item hidden ${index % 2 === 0 ? "left" : "right"
+              }`}
           >
             <div className="timeline-dot"></div>
 
@@ -77,8 +84,13 @@ function Projects() {
               </div>
 
               <div className="project-links">
-                <a href="#">View Repository</a>
-                <a href="#">Live Demo</a>
+                <a href={project.repository} target="_blank" rel="noopener noreferrer">
+                  View Repository
+                </a>
+
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                </a>
               </div>
             </div>
           </div>

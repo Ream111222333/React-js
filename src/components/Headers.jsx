@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaPython } from "react-icons/fa";
 import profile from "../assets/ream.png";
+import { SiTypescript } from "react-icons/si";
 import "../css/Headers.css";
 
 function Headers() {
   const roles = [
-    "Full stack Developer",
-    "Frondend developer",
-    "Backend developer",
+    "Modern Full Stack Developer",
+    "React & Node.js Specialist",
+    "UI/UX-Focused Engineer",
+    "Cloud-Ready Creator"
   ];
 
   const [text, setText] = useState("");
@@ -32,12 +35,22 @@ function Headers() {
 
   return (
     <header className="hero">
+      {/* Background Name */}
+      <div className="hero-bg-text">
+        <span className="bg-name-first">REAM</span>
+        <span className="bg-name-last">KHORN</span>
+      </div>
+      
       <div className="hero-container">
 
         {/* LEFT SIDE */}
         <div className="hero-left">
+          <div className="greeting-badge">
+            <span className="wave">👋</span> Hello, I'm
+          </div>
+
           <h1>
-            Hi, I'm <span>Ream</span>
+            <span>Ream</span> Khorn
           </h1>
 
           <h2>
@@ -46,30 +59,112 @@ function Headers() {
           </h2>
 
           <p>
-            I build modern, scalable and high-performance web applications
-            using React and modern JavaScript technologies.
-            I focus on clean UI, strong performance and great user experience.
+            Before: simple websites. Now: modern digital products with polished UI, 
+            fast performance, and scalable architecture. I build web experiences 
+            that feel fresh, functional, and ready for today.
           </p>
+
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-number">2+</span>
+              <span className="stat-label">Years</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">15+</span>
+              <span className="stat-label">Projects</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">100%</span>
+              <span className="stat-label">Dedicated</span>
+            </div>
+          </div>
 
           <div className="hero-buttons">
             <a href="#projects" className="btn primary">
               View My Work
             </a>
-
             <a href="#contact" className="btn outline">
               Contact Me
             </a>
           </div>
+
+          <div className="hero-socials">
+            <a href="https://github.com/Ream111222333" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/ream" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="#contact" aria-label="Email">
+              <FaEnvelope />
+            </a>
+          </div>
         </div>
 
-        {/* RIGHT SIDE IMAGE */}
+        {/* RIGHT SIDE */}
         <div className="hero-right">
-          <div className="image-wrapper">
-            <img src={profile} alt="Ream profile" />
+          <div className="profile-card">
+            <div className="profile-image-wrapper">
+              <img src={profile} alt="Ream profile" />
+              <div className="profile-ring"></div>
+            </div>
+            <div className="profile-info">
+              <h3>Ream</h3>
+              <p className="profile-role">Full-Stack Developer</p>
+              <p className="profile-location">Cambodia</p>
+              <span className="availability-badge">
+                <span className="pulse-dot"></span>
+                Available for Work
+              </span>
+            </div>
+          </div>
+
+          {/* Floating Tech Badges */}
+          <div className="float-badge fb-react">
+            <FaReact /> React
+          </div>
+          <div className="float-badge fb-node">
+            <FaNodeJs /> Node.js
+          </div>
+          <div className="float-badge fb-js">
+            <FaJsSquare /> JavaScript
+          </div>
+          <div className="float-badge fb-typescript">
+            <SiTypescript /> OOP TypeScript
+          </div>
+          <div className="float-badge fb-html">
+            <FaHtml5 /> HTML5
+          </div>
+          <div className="float-badge fb-css">
+            <FaCss3Alt /> CSS3
+          </div>
+          <div className="float-badge fb-python">
+            <FaPython /> Python
+          </div>
+
+          {/* Code Window Decoration */}
+          <div className="code-window">
+            <div className="code-header">
+              <span></span><span></span><span></span>
+            </div>
+            <pre className="code-body">
+{`<Developer
+  name="Ream Khorn"
+  role="Full-Stack"
+  skills={["React", "Node", "JS"]}
+  available={true}
+/>`}
+            </pre>
           </div>
         </div>
 
       </div>
+
+      <a href="#about" className="scroll-indicator" aria-label="Scroll down">
+        <FaChevronDown />
+      </a>
     </header>
   );
 }
