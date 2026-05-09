@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../css/Contact.css";
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCheckCircle } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCheckCircle, FaPaperPlane } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,106 +8,133 @@ function Contact() {
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState(""); // success or error
+  const [status, setStatus] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("Please fill in all fields.");
       return;
     }
-
-    // Here you can integrate with EmailJS or your backend
-    // For demo, we just simulate sending
     setTimeout(() => {
-      setStatus("Message sent successfully! ✅");
+      setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     }, 1000);
   };
 
-  // Copy to clipboard function
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     alert(`Copied: ${text}`);
   };
 
+  const contacts = [
+    {
+      icon: <FaEnvelope />,
+      label: "Email",
+      value: "reamkhorn12345@gmail.com",
+      href: "mailto:reamkhorn12345@gmail.com",
+      copy: "reamkhorn12345@gmail.com",
+    },
+    {
+      icon: <FaPhone />,
+      label: "Phone",
+      value: "+855 863 393 350",
+      href: "tel:+855863393350",
+      copy: "+855 863 393 350",
+    },
+    {
+      icon: <FaLinkedin />,
+      label: "LinkedIn",
+      value: "linkedin.com/in/ream",
+      href: "https://linkedin.com/in/ream",
+    },
+    {
+      icon: <FaGithub />,
+      label: "GitHub",
+      value: "github.com/Ream111222333",
+      href: "https://github.com/Ream111222333",
+    },
+  ];
+
   return (
     <section className="contact" id="contact">
-      <h2 className="section">Get in Touch</h2>
-      <p className="section">
-        Feel free to reach out to me for projects, collaborations, or questions.
-      </p>
+      {/* CTA Hero */}
+      <div className="contact-cta">
+        <h2>Ready to start your project?</h2>
+        <p>Let's discuss how I can help bring your ideas to life</p>
+        <a href="#contact-form" className="cta-button">
+          <FaPaperPlane /> Get In Touch
+        </a>
+      </div>
 
-      <div className="contact-container">
-        {/* Contact Info */}
+      <div className="contact-container" id="contact-form">
+        {/* Contact Cards */}
         <div className="contact-info">
-          <div className="info-card" onClick={() => copyToClipboard("ream@example.com")}>
-            <FaEnvelope className="info-icon" />
-            <h4>Email</h4>
-            <p>reamkhorn12345@gmail.com</p>
-          </div>
-          <div className="info-card" onClick={() => copyToClipboard("+855 123 456 789")}>
-            <FaPhone className="info-icon" />
-            <h4>Phone</h4>
-            <p>+855 863 393 350</p>
-          </div>
-          <div className="info-card">
-            <FaLinkedin className="info-icon" />
-            <h4>LinkedIn</h4>
-            <p>
-              <a href="https://linkedin.com/in/ream" target="_blank" rel="noreferrer">
-                linkedin.com/in/ream
+          <h3 className="contact-subtitle">Contact Info</h3>
+          <div className="info-grid">
+            {contacts.map((c, i) => (
+              <a
+                key={i}
+                href={c.href}
+                target={c.href.startsWith("http") ? "_blank" : undefined}
+                rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="info-card"
+                onClick={(e) => {
+                  if (c.copy) {
+                    e.preventDefault();
+                    copyToClipboard(c.copy);
+                  }
+                }}
+              >
+                <div className="info-icon">{c.icon}</div>
+                <div className="info-details">
+                  <span className="info-label">{c.label}</span>
+                  <span className="info-value">{c.value}</span>
+                </div>
               </a>
-            </p>
-          </div>
-          <div className="info-card">
-            <FaGithub className="info-icon" />
-            <h4>GitHub</h4>
-            <p>
-              <a href="https://github.com/Ream111222333" target="_blank" rel="noreferrer">
-                github.com
-              </a>
-            </p>
+            ))}
           </div>
         </div>
 
         {/* Contact Form */}
         <form className="contact-form" onSubmit={handleSubmit}>
-          <h3>Send me a message</h3>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-          <button type="submit" className="btn primary">
-            ✉️ Send Message
+          <h3 className="form-title">Send a Message</h3>
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <textarea
+              name="message"
+              placeholder="Tell me about your project..."
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="form-submit">
+            <FaPaperPlane /> Send Message
           </button>
           {status && (
             <p className={`form-status ${status.includes("success") ? "success" : "error"}`}>

@@ -1,86 +1,108 @@
 import "../css/Footer.css";
 import {
-  FaFacebookF,
-  FaTwitter,
   FaGithub,
   FaArrowUp,
-  FaHome,
-  FaUser,
-  FaServicestack,
-  FaEnvelope,
   FaMapMarkerAlt,
+  FaEnvelope,
+  FaLinkedin,
   FaReact,
   FaJs,
   FaHtml5,
   FaCss3Alt,
-  FaArrowDown
+  FaNodeJs
 } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const links = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  const tech = [
+    { icon: <FaReact />, label: "React" },
+    { icon: <SiTypescript />, label: "TypeScript" },
+    { icon: <FaNodeJs />, label: "Node.js" },
+    { icon: <FaJs />, label: "JavaScript" },
+    { icon: <FaHtml5 />, label: "HTML5" },
+    { icon: <FaCss3Alt />, label: "CSS3" },
+  ];
+
   return (
     <footer className="footer">
+      <div className="footer-top-line"></div>
+
       <div className="footer-container">
-        <div className="footer-column footer-column-left">
-          {/* About */}
-          <div className="footer-brand">
-            <h3>Ream<span>App</span></h3>
-            <p>
-              Frontend Developer focused on building clean, responsive, and
-              high-performance web applications using modern technologies.
-            </p>
-
-            <div className="footer-info">
-              <p><FaMapMarkerAlt /> Cambodia</p>
-              <p><FaEnvelope /> reamkhorn12345@gmail.com</p>
-            </div>
+        {/* Brand Column */}
+        <div className="footer-brand">
+          <div className="footer-logo">
+            <span className="logo-mark">RK</span>
+            <span className="logo-name">Ream Khorn</span>
           </div>
+          <p className="footer-desc">
+            Full-Stack Developer crafting clean, responsive, and high-performance
+            web experiences with modern technologies.
+          </p>
+          <div className="footer-meta">
+            <span><FaMapMarkerAlt /> Cambodia</span>
+            <span><FaEnvelope /> reamkhorn12345@gmail.com</span>
+          </div>
+          <span className="footer-badge">
+            <span className="dot"></span> Available for work
+          </span>
+        </div>
 
-          {/* Navigation */}
-          <div className="footer-links">
-            <h4>Quick Links</h4>
-            <a href="#home"><FaHome /> Home</a>
-            <a href="#about"><FaUser /> About</a>
-            <a href="#services"><FaServicestack /> Services</a>
-            <a href="#contact"><FaEnvelope /> Contact</a>
+        {/* Links Column */}
+        <div className="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            {links.map((link) => (
+              <li key={link.label}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Tech Column */}
+        <div className="footer-tech">
+          <h4>Tech Stack</h4>
+          <div className="tech-pills">
+            {tech.map((t) => (
+              <span key={t.label} className="tech-pill">
+                {t.icon} {t.label}
+              </span>
+            ))}
           </div>
         </div>
 
-        <div className="footer-column footer-column-right">
-          {/* Skills */}
-          <div className="footer-skills">
-            <h4>Tech Stack</h4>
-            <div className="skills-icons">
-              <span><FaHtml5 /> HTML5</span>
-              <span><FaCss3Alt /> CSS3</span>
-              <span><FaJs /> JavaScript</span>
-              <span><FaReact /> React</span>
-            </div>
-            <p className="availability">
-              💼 Available for freelance & junior frontend roles
-            </p>
-          </div>
-
-          {/* Social */}
-          <div className="footer-social">
-            <h4>Follow Me</h4>
-            <div className="social-icons">
-              <a href=""><FaFacebookF /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaGithub /></a>
-            </div>
+        {/* Social Column */}
+        <div className="footer-connect">
+          <h4>Connect</h4>
+          <div className="social-row">
+            <a href="https://github.com/Ream111222333" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/ream" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="mailto:reamkhorn12345@gmail.com" aria-label="Email">
+              <FaEnvelope />
+            </a>
           </div>
         </div>
       </div>
 
       {/* Bottom */}
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Ream React App. All rights reserved.</p>
-
-        <button className="back-to-top" onClick={scrollToTop} aria-label="Back to Top">
+        <p>© {new Date().getFullYear()} Ream Khorn. All rights reserved.</p>
+        <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
           <FaArrowUp />
         </button>
       </div>

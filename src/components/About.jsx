@@ -1,30 +1,7 @@
-import { useEffect, useState } from "react";
 import "../css/About.css";
-import { FaReact, FaCode, FaLaptopCode, FaGraduationCap, FaNodeJs, FaDatabase, FaGitAlt, FaCloud, FaMobileAlt, FaPalette, FaChartLine, FaAward, FaRocket, FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaLanguage, FaCertificate, FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaDocker, FaAws, FaFigma, FaServer, FaTools, FaStar, FaTrophy, FaBriefcase, FaCalendarAlt, FaWordpress, FaPhp, FaVuejs } from "react-icons/fa";
-import ProfilePhoto from "../assets/ream.png";
+import { FaReact, FaCode, FaLaptopCode, FaGraduationCap, FaNodeJs, FaDatabase, FaGitAlt, FaCloud, FaMobileAlt, FaPalette, FaChartLine, FaAward, FaRocket, FaGithub, FaLanguage, FaCertificate, FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaDocker, FaAws, FaFigma, FaServer, FaTools, FaStar, FaTrophy, FaBriefcase, FaCalendarAlt, FaWordpress, FaPhp, FaVuejs } from "react-icons/fa";
 
 function About() {
-  const [years, setYears] = useState(0);
-  const [projects, setProjects] = useState(0);
-  const [passion, setPassion] = useState(0);
-
-  useEffect(() => {
-    let y = 0, p = 0, pa = 0;
-
-    const interval = setInterval(() => {
-      if (y < 2) y++;
-      if (p < 15) p++;
-      if (pa < 100) pa += 4;
-
-      setYears(y);
-      setProjects(p);
-      setPassion(pa);
-
-      if (y === 2 && p === 15 && pa >= 100) clearInterval(interval);
-    }, 60);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="about-section" id="about">
@@ -39,84 +16,11 @@ function About() {
       </div>
 
       <div className="about-container">
-        {/* Main Hero Section */}
-        <div className="hero-section">
-          <div className="hero-content">
-            {/* Left Content */}
-            <div className="hero-left">
-              <div className="hero-intro">
-                <div className="intro-badge">
-                  <span className="badge-text">👋 Hello, I'm</span>
-                </div>
-                <h1 className="hero-title">
-                  <span className="title-first">Ream Khorn</span>
-                  <span className="title-last">Modern Full-Stack Developer</span>
-                </h1>
-                <p className="hero-subtitle">
-                  Well-prepared to turn modern ideas into polished web experiences. 
-                  I build thoughtful interfaces, robust backend systems, and seamless 
-                  cross-device journeys.
-                </p>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="quick-stats">
-                <div className="stat-item">
-                  <div className="stat-number">{years}+</div>
-                  <div className="stat-label">Years</div>
-                </div>
-                <div className="stat-divider"></div>
-                <div className="stat-item">
-                  <div className="stat-number">{projects}+</div>
-                  <div className="stat-label">Projects</div>
-                </div>
-                <div className="stat-divider"></div>
-                <div className="stat-item">
-                  <div className="stat-number">{passion}%</div>
-                  <div className="stat-label">Dedicated</div>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="hero-actions">
-                <button className="btn-primary">
-                  <FaGithub /> GitHub
-                </button>
-                <button className="btn-secondary">
-                  <FaLinkedin /> LinkedIn
-                </button>
-                <button className="btn-outline">
-                  <FaEnvelope /> Contact
-                </button>
-              </div>
-            </div>
-
-            {/* Right Profile */}
-            <div className="hero-right">
-              <div className="profile-hero">
-                <div className="profile-frame">
-                  <div className="profile-image-container">
-                    <img src={ProfilePhoto} alt="Ream" className="profile-image" />
-                    <div className="profile-glow"></div>
-                  </div>
-                  <div className="profile-info-card">
-                    <h3>Ream</h3>
-                    <p>Full-Stack Developer</p>
-                    <div className="location-info">
-                      <FaMapMarkerAlt /> Cambodia
-                    </div>
-                    <div className="status-badge available">
-                      <span className="status-dot"></span>
-                      Available for Work
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="about-header">
+          <h2 className="section-heading">About Me</h2>
+          <p className="section-subheading">Education, skills, and journey</p>
         </div>
 
-        {/* Skills & Education Section */}
         <div className="details-section">
           <div className="section-grid">
             {/* Education Card */}

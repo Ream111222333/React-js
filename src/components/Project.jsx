@@ -67,8 +67,8 @@ function Projects() {
           <div
             key={index}
             ref={(el) => (itemsRef.current[index] = el)}
-            className={`timeline-item hidden ${index % 2 === 0 ? "left" : "right"
-              }`}
+            className="timeline-item hidden"
+            style={{ transitionDelay: `${index * 0.15}s` }}
           >
             <div className="timeline-dot"></div>
 

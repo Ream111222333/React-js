@@ -65,17 +65,15 @@ function Headers() {
           </p>
 
           <div className="hero-stats">
-            <div className="stat-item">
+            <div className="stat-box">
               <span className="stat-number">2+</span>
               <span className="stat-label">Years</span>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
+            <div className="stat-box">
               <span className="stat-number">15+</span>
               <span className="stat-label">Projects</span>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
+            <div className="stat-box">
               <span className="stat-number">100%</span>
               <span className="stat-label">Dedicated</span>
             </div>
@@ -109,6 +107,9 @@ function Headers() {
             <div className="profile-image-wrapper">
               <img src={profile} alt="Ream profile" />
               <div className="profile-ring"></div>
+              <div className="profile-react-badge">
+                <FaReact />
+              </div>
             </div>
             <div className="profile-info">
               <h3>Ream</h3>
@@ -118,10 +119,16 @@ function Headers() {
                 <span className="pulse-dot"></span>
                 Available for Work
               </span>
+              <div className="tech-stack-row">
+                <span className="tech-pill"><FaReact /> React</span>
+                <span className="tech-pill"><SiTypescript /> TS</span>
+                <span className="tech-pill"><FaNodeJs /> Node</span>
+                <span className="tech-pill"><FaJsSquare /> JS</span>
+              </div>
             </div>
           </div>
 
-          {/* Floating Tech Badges */}
+          {/* Floating Tech Badges - Desktop */}
           <div className="float-badge fb-react">
             <FaReact /> React
           </div>
@@ -132,7 +139,7 @@ function Headers() {
             <FaJsSquare /> JavaScript
           </div>
           <div className="float-badge fb-typescript">
-            <SiTypescript /> OOP TypeScript
+            <SiTypescript /> TypeScript
           </div>
           <div className="float-badge fb-html">
             <FaHtml5 /> HTML5
@@ -144,16 +151,17 @@ function Headers() {
             <FaPython /> Python
           </div>
 
-          {/* Code Window Decoration */}
+          {/* Code Window */}
           <div className="code-window">
             <div className="code-header">
               <span></span><span></span><span></span>
+              <span className="code-title">developer.ts</span>
             </div>
             <pre className="code-body">
 {`<Developer
   name="Ream Khorn"
   role="Full-Stack"
-  skills={["React", "Node", "JS"]}
+  skills={["React", "Node"]}
   available={true}
 />`}
             </pre>
