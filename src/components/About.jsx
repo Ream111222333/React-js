@@ -40,7 +40,7 @@ function About() {
                   <span className="edu-period">2026 - Present</span>
                   <div className="edu-status active">Currently Enrolled</div>
                   <p>
-                    Advanced Full-Stack Web Development program with comprehensive 
+                    Bachelor's Degree in Full-Stack Web Development program with comprehensive 
                     curriculum covering modern technologies and real-world projects.
                   </p>
                 </div>
@@ -88,7 +88,7 @@ function About() {
           <div className="achievements-section">
             <div className="achievement-item">
               <FaTrophy className="achievement-icon" />
-              <span className="achievement-value">15+</span>
+              <span className="achievement-value">12+</span>
               <span className="achievement-label">Projects Completed</span>
             </div>
             <div className="achievement-item">
@@ -103,7 +103,7 @@ function About() {
             </div>
             <div className="achievement-item">
               <FaAward className="achievement-icon" />
-              <span className="achievement-value">5+</span>
+              <span className="achievement-value">4+</span>
               <span className="achievement-label">Certifications</span>
             </div>
           </div>
@@ -120,7 +120,7 @@ function About() {
                     <span className="journey-date"><FaCalendarAlt /> 2026 - Present</span>
                   </div>
                   <span className="journey-tag">Currently Enrolled</span>
-                  <p>Advanced Full-Stack Web Development program focusing on modern technologies, real-world projects, and professional soft skills.</p>
+                  <p>Bachelor's Degree in Full-Stack Web Development program focusing on modern technologies, real-world projects, and professional soft skills.</p>
                 </div>
               </div>
               <div className="journey-item">
@@ -131,7 +131,7 @@ function About() {
                     <span className="journey-date"><FaCalendarAlt /> 2025 - 2026</span>
                   </div>
                   <span className="journey-tag past">Foundation</span>
-                  <p>Mastered HTML, CSS, JavaScript fundamentals and built portfolio projects independently through online resources and documentation.</p>
+                  <p> HTML, CSS, JavaScript fundamentals and built portfolio projects independently through online resources and documentation.</p>
                 </div>
               </div>
             </div>
