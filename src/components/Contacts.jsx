@@ -10,16 +10,50 @@ function Contact() {
   });
   const [status, setStatus] = useState("");
 
+  const sanitize = (str) => {
+    return str
+      .trim()
+      .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+      .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, "")
+      .replace(/javascript:/gi, "")
+      .replace(/on\w+=/gi, "");
+  };
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    const clean = name === "email" ? value.trim() : sanitize(value);
+    if (clean.length > 1000) return;
+    setFormData({ ...formData, [name]: clean });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+
+    const name = sanitize(formData.name);
+    const email = formData.email.trim();
+    const message = sanitize(formData.message);
+
+    if (!name || !email || !message) {
       setStatus("Please fill in all fields.");
       return;
     }
+    if (name.length < 2) {
+      setStatus("Name must be at least 2 characters.");
+      return;
+    }
+    if (!isValidEmail(email)) {
+      setStatus("Please enter a valid email address.");
+      return;
+    }
+    if (message.length < 10) {
+      setStatus("Message must be at least 10 characters.");
+      return;
+    }
+
     setTimeout(() => {
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
