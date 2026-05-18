@@ -57,8 +57,8 @@ function Navbar() {
           <a href="#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="nav-dot"></span> About
           </a>
-          <a href="#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="nav-dot"></span> Services
+          <a href="#Experiences" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            <span className="nav-dot"></span> Experiences
           </a>
           <a href="#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             <span className="nav-dot"></span> Projects
@@ -93,7 +93,7 @@ function Navbar() {
       <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
         <a href="#home" onClick={() => setIsMobileMenuOpen(false)}><FaHome /> Home</a>
         <a href="#about" onClick={() => setIsMobileMenuOpen(false)}><FaUser /> About</a>
-        <a href="#services" onClick={() => setIsMobileMenuOpen(false)}><FaLaptopCode /> Services</a>
+        <a href="#Experiences" onClick={() => setIsMobileMenuOpen(false)}><FaLaptopCode /> Experiences</a>
         <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}><FaFolderOpen /> Projects</a>
       </div>
     </nav>

@@ -86,7 +86,7 @@ function Experiences() {
   ];
 
   return (
-    <section className="services-section" id="experiences">
+    <section className="services-section" id="Experiences">
       <div className="services-container">
         {/* Header Section */}
         <div className="services-header">
